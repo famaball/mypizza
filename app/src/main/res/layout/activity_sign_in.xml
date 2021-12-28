@@ -29,7 +29,7 @@
             android:text="@string/welcome_back"
             android:textColor="@color/purple_theme_color"
             android:fontFamily="@font/montserrat_bold"
-            android:textSize="32sp"/>
+            android:textSize="25sp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -98,22 +98,37 @@
                 android:text="@string/don_t_have_a_account"
                 android:textSize="15sp"
                 android:textColor="@color/text_light_color"/>
+
             <TextView
+                android:id="@+id/openSignInActivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/register"
                 android:textSize="15sp"
                 android:textColor="@color/purple_theme_color"
-                android:fontFamily="@font/montserrat_bold" />
+                android:fontFamily="@font/montserrat_bold"
+                android:onClick="openSignInActivity"
+                />
+
         </LinearLayout>
+
+        <Button
+            android:id="@+id/openSignInGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:background="#00000000"
+            android:text="@string/sign_in_google"
+            android:textColor="@color/purple_theme_color"
+            android:textSize="15sp" />
 
         <ProgressBar
             android:id="@+id/login_progress_bar"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="20dp"
             android:layout_gravity="center"
-            android:visibility="invisible"/>
+            android:layout_marginTop="20dp"
+            android:visibility="invisible" />
 
     </LinearLayout>
 
