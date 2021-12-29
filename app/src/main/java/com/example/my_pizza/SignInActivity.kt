@@ -55,7 +55,13 @@ class SignInActivity : AppCompatActivity() {
 
         val email = findViewById<TextInputEditText>(R.id.email)
         val password = findViewById<TextInputEditText>(R.id.password)
+        val openSignUpActivity =findViewById<Button>(R.id.openSignUpActivity)
+        openSignUpActivity.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
+        }
         val login_btn = findViewById<Button>(R.id.login_btn)
+
         val openSignInGoogle = findViewById<Button>(R.id.openSignInGoogle)
         login_btn.setOnClickListener {
 
@@ -72,11 +78,13 @@ class SignInActivity : AppCompatActivity() {
 
     }
 
+
+
+
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
 
-//        startActivity(Intent(this, DashboardActivity::class.java))
     }
 
 //    fun openSignInActivity(view: android.view.View) {
@@ -97,11 +105,9 @@ class SignInActivity : AppCompatActivity() {
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
-            println("999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999")
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             val exception = task.exception
             if(task.isSuccessful){
-                println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
                 try {
                     // Google Sign In was successful, authenticate with Firebase
                     val account = task.getResult(ApiException::class.java)!!
@@ -121,11 +127,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
 
-//
 
-//            val intent = Intent(this, DashboardActivity::class.java)
-//            startActivity(intent)
-//    }
 
 
     private fun firebaseAuthWithGoogle(idToken: String) {
