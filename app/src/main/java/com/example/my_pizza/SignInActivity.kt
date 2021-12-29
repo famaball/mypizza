@@ -32,7 +32,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     val ref = FirebaseAuth.getInstance()
-    private lateinit var openSignInGoogle: Button
+
     private lateinit var mAuth:FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
 
@@ -51,9 +51,7 @@ class SignInActivity : AppCompatActivity() {
 
         // firebase Auth instance
         mAuth= FirebaseAuth.getInstance()
-        openSignInGoogle.setOnClickListener {
-            signIn()
-        }
+
 
         val email = findViewById<TextInputEditText>(R.id.email)
         val password = findViewById<TextInputEditText>(R.id.password)
@@ -68,9 +66,6 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
-
-        mAuth = FirebaseAuth.getInstance()
-
         openSignInGoogle.setOnClickListener{
             signIn()
         }
@@ -81,27 +76,32 @@ class SignInActivity : AppCompatActivity() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
 
+//        startActivity(Intent(this, DashboardActivity::class.java))
     }
 
-    fun openSignInActivity(view: android.view.View) {
-        val openSignInActivity= findViewById<TextView>(R.id.openSignInActivity)
+//    fun openSignInActivity(view: android.view.View) {
+//        val openSignInActivity= findViewById<TextView>(R.id.openSignInActivity)
+//
+//        openSignInActivity.setOnClickListener{
+//
+//            val intent = Intent(this, SignUpActivity::class.java)
+//            startActivity(intent)
+//        }
+//    }
 
-        openSignInActivity.setOnClickListener{
-
-            val intent = Intent(this, SignUpActivity::class.java)
-            startActivity(intent)
-        }
-    }
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
+
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
+            println("999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999")
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             val exception = task.exception
-            if (task.isSuccessful) {
+            if(task.isSuccessful){
+                println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
                 try {
                     // Google Sign In was successful, authenticate with Firebase
                     val account = task.getResult(ApiException::class.java)!!
@@ -111,25 +111,38 @@ class SignInActivity : AppCompatActivity() {
                     // Google Sign In failed, update UI appropriately
                     Log.w("SignInActivity", "Google sign in failed", e)
                 }
-            } else {
+
+            }else{
                 Log.w("SignInActivity", exception.toString())
+
             }
+
         }
     }
 
+
+//
+
+//            val intent = Intent(this, DashboardActivity::class.java)
+//            startActivity(intent)
+//    }
+
+
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
+
         mAuth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
+
                     Log.d("SignInActivity", "signInWithCredential:success")
-                    val intent = Intent(this, DashboardActivity::class.java)
-                    startActivity(intent)
-                    finish()
+
+                        val intent = Intent(this, DashboardActivity::class.java)
+                        startActivity(intent)
                 } else {
                     // If sign in fails, display a message to the user.
-                    Log.d("SignInActivity", "signInWithCredential:failure")
+                    Log.w("SignInActivity", "signInWithCredential:failure", task.exception)
                 }
             }
     }
