@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="50dp"
-                android:text="@string/enjoy_your_meal"
+                android:text="@string/inscription"
                 android:textSize="18sp"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:layout_gravity="center"/>
@@ -74,38 +74,8 @@
                     android:drawablePadding="10dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/register_organization_til"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:errorEnabled="true"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/company_organization"
-                    android:inputType="text"
-                    android:drawableStart="@drawable/ic_organization"
-                    android:drawablePadding="10dp"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/register_employee_id_til"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:errorEnabled="true"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/employee_id"
-                    android:inputType="text"
-                    android:drawableStart="@drawable/ic_employee_id"
-                    android:drawablePadding="10dp"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/register_mobile_num_til"
                 android:layout_width="match_parent"
@@ -158,27 +128,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:text="@string/employee_id_card"
-                    android:textSize="16sp"
-                    android:textColor="@color/text_light_color"
-                    android:fontFamily="@font/montserrat_semi_bold"/>
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/choose_image"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    />
-            </LinearLayout>
 
             <ImageView
                 android:id="@+id/register_employee_id_card_iv"
@@ -202,26 +152,15 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="5dp"
-                    android:text="@string/preview"
-                    android:textAllCaps="false"
-                    android:textColor="@color/text_dark_color"
-                    android:backgroundTint="@color/white"
-                    />
-
-                <Button
-                    android:id="@+id/register_emp_btn"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:id="@+id/btn_inscription"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:text="@string/register"
+                    android:text="@string/bouton_inscription"
+                    android:paddingVertical="15dp"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:enabled="false"/>
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -230,6 +169,7 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_gravity="center">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -237,14 +177,21 @@
                     android:text="@string/already_have_a_account"
                     android:textSize="15sp"
                     android:textColor="@color/text_light_color"/>
-                <TextView
+
+
+
+
+                <Button
+                    android:id="@+id/se_connecter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/login"
                     android:textSize="15sp"
                     android:textColor="@color/purple_theme_color"
                     android:fontFamily="@font/montserrat_bold"
+                    android:background="#00000000"
                     />
+
             </LinearLayout>
 
         </LinearLayout>

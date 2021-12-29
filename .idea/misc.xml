@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-hdpi/ic_google.xml" value="0.16145833333333334" />
         <entry key="app/src/main/res/drawable/btn_ronded.xml" value="0.2740740740740741" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.2265625" />
         <entry key="app/src/main/res/drawable/circle_background.xml" value="0.2935185185185185" />
+        <entry key="app/src/main/res/drawable/ic_google.xml" value="0.6458333333333334" />
         <entry key="app/src/main/res/drawable/ic_logo_auth.xml" value="0.2935185185185185" />
         <entry key="app/src/main/res/drawable/login_background.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/drawable/rectangle_background.xml" value="0.18385416666666668" />
@@ -15,10 +17,10 @@
         <entry key="app/src/main/res/layout/activity_bienvenue.xml" value="0.24048913043478262" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.24048913043478262" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.125" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_phone_auth.xml" value="0.16770833333333332" />
-        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.16770833333333332" />
-        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.45" />
         <entry key="app/src/main/res/layout/list_menu_item.xml" value="0.25" />
       </map>
     </option>
